@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: songscanner-backend
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+    dockerfilePath: ./render-backend/Dockerfile
+    dockerContext: ./render-backend
+    envVars:
+      - key: NODE_ENV
+        value: production
